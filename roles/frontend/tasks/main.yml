@@ -3,7 +3,7 @@
   ansible.builtin.yum:
     name: nginx 
     state: absent
-    ignore_error: true
+    ignore_errors: true
 
 
 # echo "Clean up"
