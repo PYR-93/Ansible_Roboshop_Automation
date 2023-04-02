@@ -5,6 +5,12 @@
     state: absent
   ignore_errors: true 
 
+- name: Recursively remove directory
+  ansible.builtin.file:
+    path: /etc/nginx/*
+    state: absent
+    
+
 
 # echo "Clean up"
 # yum remove  -y nginx &>>${Logfile}
