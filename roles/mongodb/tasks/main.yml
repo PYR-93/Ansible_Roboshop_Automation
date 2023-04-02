@@ -1,4 +1,4 @@
-- name: Download file - Fetchin the Repo
+- name: Download fie - Fetchin the Repo
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo
     dest: /etc/yum.repos.d/{Component}.repo
