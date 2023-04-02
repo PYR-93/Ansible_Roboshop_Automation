@@ -34,9 +34,13 @@
 
 - name: Recursively remove directory
   ansible.builtin.file:
-    path: 
-     - /tmp/mongodb.zip
-     - /tmp/mongodb
+    path: /tmp/mongodb.zip
+    state: absent
+
+
+- name: Recursively remove directory
+  ansible.builtin.file:
+    path: /tmp/mongodb
     state: absent
 
 
