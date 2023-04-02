@@ -1,8 +1,8 @@
-- name: frontend node setup
-  hosts: FRONTEND
-  become: true
-  roles:
-   - frontend
+# - name: frontend node setup
+#   hosts: FRONTEND
+#   become: true
+#   roles:
+#    - frontend
 
 - name: MONGODB node setup
   hosts: MONGODB
