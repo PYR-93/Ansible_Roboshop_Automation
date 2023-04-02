@@ -3,28 +3,35 @@
     url: https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo
     dest: /etc/yum.repos.d/{Component}.repo
 
+- name: Install Mongodb in Box
+  ansible.builtin.yum:
+    name: mongodb-org
+    state: present
+  ignore_errors: true
+
+- name: enable and starting the mongodb
+  ansible.builtin.service:
+    name: mongod 
+    state: started
+    enabled: true
+
+
+- name: Replace 127.0.0.1/0.0.0.0
+  ansible.builtin.replace:
+    path: /etc/mongod.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: restart the mongodb
+  ansible.builtin.service:
+    name: mongod 
+    state: restarted
 
 
 
-# echo "************Fetchin the Repo*******"
-# curl -s -o /etc/yum.repos.d/{Component}.repo https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo &>>${Logfile}
-# StatusCheck $?
 
-# echo "*******Install mongodg********"
-# yum install -y mongodb-org &>>${Logfile}
-# StatusCheck $?
-# echo "*******Enable mongodg********"
-# systemctl enable mongod &>>${Logfile}
-# StatusCheck $?
-# echo "*******Start mongodg********"
-# systemctl start mongod &>>${Logfile}
-# StatusCheck $?
 
-# sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf &>>${Logfile}
-# StatusCheck $?
-# echo "restart the service"
-# systemctl restart mongod &>>${Logfile}
-# StatusCheck $?
+
 
 
 
