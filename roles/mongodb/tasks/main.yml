@@ -43,24 +43,20 @@
     path: /tmp/mongodb
     state: absent
 
+- name: Download the Zip file MongoDB"
+  ansible.builtin.get_url:
+    url: https://github.com/roboshop-devops-project/mongodb/archive/main.zip
+    dest: /tmp/mongodb.zip
+
+
+- name: Unarchive a file that is already on the remote machine
+  ansible.builtin.unarchive:
+    src: /tmp/mongodb.zip
+    dest: /tmp/mongodb-main
+    remote_src: yes
 
 
 
-
-
-
-
-
-
-
-# echo " cleanup before installation"
-# rm -rf /tmp/mongodb.zip
-# rm -rf /tmp/mongodb-main &>>${Logfile}
-# StatusCheck $?
-
-# echo "Download the Zip file MongoDB"
-# curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>>${Logfile}
-# StatusCheck $?
 
 # cd /tmp
 # unzip mongodb.zip &>>${Logfile}
