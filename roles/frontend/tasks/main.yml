@@ -49,7 +49,7 @@
   ansible.builtin.copy:
     src: roboshop.conf
     dest: /etc/nginx/default.d/
-    remote_src: yes
+    
 
 - name: enable and starting the nginx
   ansible.builtin.service:
