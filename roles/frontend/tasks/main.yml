@@ -1,6 +1,6 @@
 
 - name: Remove Nginx package from Box
-  ansible.builtin.apt:
+  ansible.builtin.yum:
     name: nginx 
     state: absent
     ignore_error: true
