@@ -39,21 +39,30 @@
     dest: /usr/share/nginx/html
     remote_src: yes
 
-# echo "------------Let's download the HTDOCS content and deploy under the Nginx path----"
-# curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" &>>${Logfile}
-# StatusCheck $?
+- name: Copy file 
+  ansible.builtin.copy:
+    src: /usr/share/nginx/html/frontend-main/static/*
+    dest: /usr/share/nginx/html
+    remote_src: yes
+
+- name: Copy file 
+  ansible.builtin.copy:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/
+    remote_src: yes
+
+- name: enable and starting the nginx
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: true
+    daemon_reload: ture
 
 
 
-# echo "----------Deploy the downloaded content in Nginx Default Location.------"
 
-# cd /usr/share/nginx/html &>>${Logfile}
-# StatusCheck $?
-# rm -rf * 
-# unzip /tmp/frontend.zip &>>${Logfile}
-# StatusCheck $?
-# mv frontend-main/static/* . &>>${Logfile}
-# StatusCheck $?
+
+
 # mv frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf &>>${Logfile}
 # StatusCheck $?
 
