@@ -9,18 +9,22 @@
   ansible.builtin.file:
     path: /etc/nginx/*
     state: absent
-    
+
+- name: Install Nginx package in Box
+  ansible.builtin.yum:
+    name: nginx 
+    state: present
+  ignore_errors: true
+
+- name: enable and starting the nginx
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: true
 
 
-# echo "Clean up"
-# yum remove  -y nginx &>>${Logfile}
-# StatusCheck $?
-# rm -rf /etc/nginx &>>${Logfile}
-# StatusCheck $?
 
-# yum install nginx -y
-# systemctl enable nginx
-# systemctl start nginx
+
 
 # echo "------------Let's download the HTDOCS content and deploy under the Nginx path----"
 # curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" &>>${Logfile}
