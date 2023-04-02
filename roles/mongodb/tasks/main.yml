@@ -27,18 +27,18 @@
     name: mongod 
     state: restarted
 
-- name: Recursively remove directory
+- name: Recursively remove directory mongodb-main
   ansible.builtin.file:
     path: /tmp/mongodb-main
     state: absent
 
-- name: Recursively remove directory
+- name: Recursively remove directory mongodb.zip
   ansible.builtin.file:
     path: /tmp/mongodb.zip
     state: absent
 
 
-- name: Recursively remove directory
+- name: Recursively remove directory mongodb
   ansible.builtin.file:
     path: /tmp/mongodb
     state: absent
