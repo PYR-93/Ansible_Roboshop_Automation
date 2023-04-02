@@ -52,7 +52,7 @@
 - name: Unarchive a file that is already on the remote machine
   ansible.builtin.unarchive:
     src: /tmp/mongodb.zip
-    dest: /tmp/mongodb-main
+    dest: /tmp
     remote_src: yes
 
 
