@@ -27,6 +27,13 @@
     name: mongod 
     state: restarted
 
+- name: Recursively remove directory
+  ansible.builtin.file:
+    path: 
+      - /tmp/mongodb.zip
+      - /tmp/mongodb-main
+    state: absent
+
 
 
 
