@@ -70,7 +70,7 @@
 #     remote_src: yes
    
 - name: Run a js file
-  ansible.builtin.shell: mongo < catalogue.js && mongo < users.js
+  ansible.builtin.shell: mongo < /tmp/mongodb-main/catalogue.js && mongo < /tmp/mongodb-main/users.js
 
 
 
