@@ -2,3 +2,5 @@
 frontend.roboshop.internal ansible_user=centos ansible_ssh_pass=Dummy ansible_sudo_pass=Dummy
 [MONGODB]
 mongodb.roboshop.internal ansible_user=centos ansible_ssh_pass=Dummy ansible_sudo_pass=Dummy
+[jumpbox]
+jumpserver.roboshop.internal ansible_user=centos ansible_ssh_pass=Dummy ansible_sudo_pass=Dummy
