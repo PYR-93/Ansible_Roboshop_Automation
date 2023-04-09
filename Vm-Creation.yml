@@ -3,9 +3,9 @@
   tasks: 
    - name: Create a VM with a custom image
       azure_rm_virtualmachine:
-      resource_group: myResourceGroup
+      resource_group: Learn_Azure
       name: testvm001
-      vm_size: Standard_DS1_v2
+      vm_size: Standard_B1ms
       admin_username: "{{ centos }}"
       admin_password: "{{ DevOps654321 }}"
       image: "{{ /subscriptions/54d1ecf0-fc36-4e9e-9f37-3f5e0b35d6a5/resourceGroups/Learn_Azure/providers/Microsoft.Compute/galleries/Master_Gallery/images/imageDef/versions/1.0.0 }}"
