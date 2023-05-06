@@ -1,5 +1,5 @@
 - name: Creating Vm
-  hosts: jumpbox
+  hosts: Image
   tasks: 
     - name: Create a VM with a custom image
       azure_rm_virtualmachine:
