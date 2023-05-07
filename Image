@@ -1,2 +1,2 @@
 [Image]
-20.204.102.7 ansible_user=Centos ansible_ssh_pass=DevOps123456 ansible_sudo_pass=DevOps123456
+nsible_host=20.204.102.7 ansible_user=Centos ansible_ssh_pass=DevOps123456 ansible_sudo_pass=DevOps123456
