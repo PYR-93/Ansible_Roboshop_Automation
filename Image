@@ -1,2 +1,3 @@
 [Image]
 20.204.102.7 ansible_connection=ssh ansible_ssh_user=Centos ansible_ssh_pass=DevOps123456 ansible_sudo_pass=DevOps123456
+10.0.0.4
