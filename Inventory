@@ -5,4 +5,4 @@ mongodb.roboshop.internal ansible_user=centos ansible_ssh_pass=Dummy ansible_sud
 [jumpbox]
 jumpserver.roboshop.internal ansible_user=centos ansible_ssh_pass=Dummy ansible_sudo_pass=Dummy
 [Image]
-20.204.102.7 ansible_connection=ssh ansible_user=Centos ansible_ssh_pass=DevOps123456 ansible_sudo_pass=DevOps123456
+20.204.102.7 ansible_connection=ssh ansible_ssh_user=Centos ansible_ssh_pass=DevOps123456 ansible_sudo_pass=DevOps123456
